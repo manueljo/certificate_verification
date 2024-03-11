@@ -1,0 +1,1 @@
+web: gunicorn cert_project.wsgi
