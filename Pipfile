@@ -12,6 +12,7 @@ django-template-partials = "*"
 django-crispy-forms = "*"
 django-allauth = "*"
 crispy-bootstrap5 = "*"
+whitenoise = "*"
 
 [dev-packages]
 
