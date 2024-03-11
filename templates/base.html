@@ -65,9 +65,15 @@
             <li class="nav-item">
               <a href="{% url "certificate" %}" class="nav-link mx-2">upload</a>
             </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a href="{% url "account_logout" %}" class="nav-link mx-2">Sign-out</a>
+            </li>
+            {% else %}
             <li class="nav-item">
               <a href="{% url "account_login" %}" class="nav-link mx-2">Sign-in</a>
             </li>
+            {% endif %}
     
           </ul>
 
