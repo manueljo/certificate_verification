@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+reportlab = "*"
+django = "*"
+qrcode = {extras = ["pil"], version = "*"}
+pillow = "*"
+django-template-partials = "*"
+django-crispy-forms = "*"
+django-allauth = "*"
+crispy-bootstrap5 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
