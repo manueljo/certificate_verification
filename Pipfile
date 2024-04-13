@@ -1,0 +1,45 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.7.2"
+certifi = "==2024.2.2"
+cffi = "==1.16.0"
+chardet = "==5.2.0"
+charset-normalizer = "==3.3.2"
+click = "==8.1.7"
+colorama = "==0.4.6"
+crispy-bootstrap5 = "==2024.2"
+cryptography = "==42.0.5"
+defusedxml = "==0.7.1"
+django = "==5.0.3"
+django-allauth = "==0.61.1"
+django-crispy-forms = "==2.1"
+django-template-partials = "==23.4"
+gunicorn = "==21.2.0"
+h11 = "==0.14.0"
+idna = "==3.6"
+oauthlib = "==3.2.2"
+packaging = "==24.0"
+pillow = "==10.2.0"
+pycparser = "==2.21"
+pyjwt = "==2.8.0"
+pypng = "==0.20220715.0"
+python3-openid = "==3.2.0"
+qrcode = "==7.4.2"
+reportlab = "==4.1.0"
+requests = "==2.31.0"
+requests-oauthlib = "==1.4.0"
+sqlparse = "==0.4.4"
+typing-extensions = "==4.10.0"
+tzdata = "==2024.1"
+urllib3 = "==2.2.1"
+uvicorn = "==0.28.0"
+whitenoise = "==6.6.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

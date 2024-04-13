@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% load partials %}
+
+{% startpartial verification%}
+  {% if details is not None %}
+  <h1>&#9989;</h1>
+  <h2 class="display-1 text-uppercase">Certificate Verified</h2>
+  <p class="fs-4 my-4 pb-2">Surname: {{details.surname}} Reg_number: {{details.reg_number}}<br>Grade: {{details.grade}}<br>Year Graduated: {{details.year_graduated}}</p>
+  {% else %}
+  <h1>&#10060;</h1>
+  <h2 class="text-uppercase">Certificate<br>Not Verified</h2>
+  {% endif %}
+{% endpartial %}
+
+{% block content %}
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 pe-5 mt-5 mt-md-0">
+        <h2 class="display-1 text-uppercase">Verify Our Certificate Here</h2>
+        <p class="fs-4 my-4 pb-2">Our Certificate Verification System</p>
+        <div>
+          <form class="d-flex align-items-center position-relative " hx-post='{% url "verify" %}' hx-swap='innerHTML' hx-target='#verify'>
+            <input type="text" name="code" placeholder="Enter certificate code"
+              class="form-control bg-white border-0 rounded-4 shadow-none px-4 py-3 w-100" maxlength='8'>
+            <button type='submit' class="btn btn-primary rounded-4 px-3 py-2 position-absolute align-items-center m-1 end-0">verify</button>
+          </form>
+
+        </div>
+      </div>
+      <div class="col-md-6 mt-5">
+        <div id=verify>
+          <img src="{% static "images/billboard-img.jpg" %}" alt="img" class="img-fluid">
+          {% if details %}
+          {% partial verification%}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  form = document.querySelector('form');
+  form.addEventListener('htmx:afterRequest', () => {
+    form.reset();
+  });
+</script>
+
+{% endblock content %}
