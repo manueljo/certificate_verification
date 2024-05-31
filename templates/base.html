@@ -64,7 +64,7 @@
             </li>
             {% if request.user.is_staff %}
             <li class="nav-item">
-              <a href="{% url "certificate" %}" target='_blank' class="nav-link mx-2">upload</a>
+              <a href="{% url "admin:index" %}" class="nav-link mx-2">Admin</a>
             </li>
             {% endif %}
             {% if request.user.is_authenticated %}
