@@ -272,7 +272,7 @@ a {
 }
 
 .form-control {
-  border: 1px solid #e4e3e3;
+  border: 1px solid #00680e;
 }
 
 .form-control:focus {
@@ -915,4 +915,20 @@ iconify-icon.video-icon {
 
 iconify-icon.video-icon:hover {
   font-size: 35px;
+}
+
+.verified{
+  width: auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(4, 73, 4);
+  background-color: #bbd4c4;
+}
+
+.not-verified{
+  width: auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(70, 2, 2);
+  background-color: #f1d5d5;
 }

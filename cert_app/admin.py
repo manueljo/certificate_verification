@@ -48,9 +48,11 @@ class BulkCertificateAdmin(admin.ModelAdmin):
                 )
                 print(f'student code {student.cert_code}')
 
-    
     generate_certificates.short_description = 'Generate Certificates'
 
-admin.site.register(StudentDetails)
+class StudentAdmin(admin.ModelAdmin):
+    readonly_fields=('cert_code',)
+
+admin.site.register(StudentDetails, StudentAdmin)
 admin.site.register(Certificate)
 admin.site.register(Bulk_Certificate, BulkCertificateAdmin)

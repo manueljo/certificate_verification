@@ -217,7 +217,7 @@ JAZZMIN_UI_TWEAKS = {
 JAZZMIN_SETTINGS = {
     "show_ui_builder":True,
     "site_logo": "images/crescent_logo.png",
-    "login_logo": "images/crescent_logo.png",
-    "welcome_sign": "Welcome to Crescent University Administration Portal",
+    "login_logo": "images/crescent_logo_login.png",
+    "welcome_sign": "Admin login",
     "copyright": "Crescent University",
 }

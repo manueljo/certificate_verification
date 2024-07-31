@@ -4,12 +4,25 @@
 
 {% startpartial verification%}
   {% if details is not None %}
-  <h1>&#9989;</h1>
-  <h2 class="display-1 text-uppercase">Certificate Verified</h2>
-  <p class="fs-4 my-4 pb-2">Surname: {{details.surname}} Reg_number: {{details.reg_number}}<br>Grade: {{details.grade}}<br>Year Graduated: {{details.year_graduated}}</p>
+  <div class="verified">
+    <center>
+      <h1>&#9989;</h1>
+    </center>
+    <h2 class="display-1 text-uppercase">Certificate Verified</h2>
+    <p class="fs-4 my-4 pb-2">
+      <strong>Surname: </strong> {{details.surname}} <br>
+      <strong>First Name: </strong> {{details.first_name}} <br>
+      <strong>Middle Name: </strong> {{details.middle_name}}<br>
+      <strong>Reg. Number: </strong> {{details.reg_number}}<br>
+      <strong>Grade: </strong> {{details.grade}}<br>
+      <strong>Year Graduated: </strong> {{details.year_graduated}}
+    </p>
+  </div>
   {% else %}
-  <h1>&#10060;</h1>
-  <h2 class="text-uppercase">Certificate<br>Not Verified</h2>
+  <div class="not-verified">
+    <h1>&#10060;</h1>
+    <h2 class="text-uppercase">Certificate<br>Not Verified</h2>
+  </div>
   {% endif %}
 {% endpartial %}
 
@@ -23,7 +36,7 @@
         <div>
           <form class="d-flex align-items-center position-relative " hx-post='{% url "verify" %}' hx-swap='innerHTML' hx-target='#verify'>
             <input type="text" name="code" placeholder="Enter certificate code"
-              class="form-control bg-white border-0 rounded-4 shadow-none px-4 py-3 w-100" maxlength='8'>
+              class="form-control bg-white rounded-4 shadow-none px-4 py-3 w-100" maxlength='8'>
             <button type='submit' class="btn btn-primary rounded-4 px-3 py-2 position-absolute align-items-center m-1 end-0">verify</button>
           </form>
 

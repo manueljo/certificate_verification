@@ -38,7 +38,7 @@ DEPARTMENT = [
 ]
 
 class StudentDetails(models.Model):
-    cert_code = models.CharField(max_length=15, unique=True)
+    cert_code = models.CharField(max_length=15, unique=True,blank=True)
     surname = models.CharField(max_length=20)
     first_name = models.CharField(max_length=20)
     middle_name = models.CharField(max_length=20)

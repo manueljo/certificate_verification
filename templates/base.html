@@ -35,7 +35,7 @@
   <nav class="main-menu d-flex navbar navbar-expand-lg p-2 py-3 p-lg-4 py-lg-4 ">
     <div class="container-fluid">
       <div class="main-logo d-lg-none">
-        <a href="index.html">
+        <a href="">
           <img src="{% static "images/crescent_logo.png" %}" alt="logo" class="img-fluid logo"> Crescent University
         </a>
       </div>
@@ -63,9 +63,9 @@
               <a href="{% url "verify" %}" class="nav-link mx-2 active">Home</a>
             </li>
             {% if request.user.is_staff %}
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
               <a href="{% url "admin:index" %}" class="nav-link mx-2">Admin</a>
-            </li>
+            </li> {% endcomment %}
             {% endif %}
             {% if request.user.is_authenticated %}
             <li class="nav-item">
@@ -73,7 +73,7 @@
             </li>
             {% else %}
             <li class="nav-item">
-              <a href="{% url "account_login" %}" class="nav-link mx-2">Sign-in</a>
+              <a href="{% url "admin:index" %}" class="nav-link mx-2">Admin Sign-in</a>
             </li>
             {% endif %}
     
@@ -87,7 +87,7 @@
 
   </nav>
 <div class="watermark">
-  <img src="{% static "images/crescent_logo.png" %}" alt="" style='width:auto;'>
+  <img src="{% static "images/crescent_logo.png" %}" alt="" style='width:100%;max-width:500px;'>
 </div>
   {% block content %}{% endblock content %}
   
